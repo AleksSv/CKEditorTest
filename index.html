@@ -1,19 +1,41 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>A Simple Page with CKEditor</title>
+        <title>Post HTML Page</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="styling.css">
+
         <!-- Make sure the path to CKEditor is correct. -->
         <script src="ckeditor/ckeditor.js"> </script>
     </head>
     <body>
         <form>
-            <textarea name="editor1" id="editor1" rows="10" cols="70">
-                This is my textarea to be replaced with CKEditor.
-            </textarea>
+        	<h1>CKEditor Post Testing</h1>
+        	<div id="editor">
+        	</div>
+			
+			<input onclick="postHTML();" type="button" value="Post Information">
+        	
+        	<div id="editorPost">
+        	</div>
+
             <script>
-                // Replace the <textarea id="editor1"> with a CKEditor
-                // instance, using default configuration.
-                CKEDITOR.replace( 'editor1' );
+
+            var editor, html = '';
+        	var config = {};
+
+        	function postHTML()
+        	{
+        		if(!editor)
+        			{return;}
+
+        		//Get Editor Contents
+        		document.getElementById('editorPost').innerHTML = html = editor.getData();
+        	}
+            // Replace the <textarea id="editorTextArea"> with a CKEditor
+            // instance, using default configuration.
+            editor = CKEDITOR.appendTo( 'editor', config, html );
+
             </script>
         </form>
     </body>
