@@ -29,4 +29,4 @@ http://docs.ckeditor.com/#!/guide/dev_disallowed_content
 
 Problems
 ==================
-The disallowedContent method does not seem to work, for instance, scripts can run known functions and still show up in the HTML shown in Development tools. While parsing of the HTML server side would need to be done as we can't depend on the client side for security, it would be more user freindly if it got rid of disallowed content.
+The disallowedContent method does not seem to work, for instance, scripts can run known functions and still show up in the HTML shown in Development tools. While parsing of the HTML server side would need to be done as we can't depend on the client side for security, it would be more user freindly if it got rid of disallowed content. However, CKeditor is still a very promising way for writers to submit content which could then dynamically be displayed by the server.
