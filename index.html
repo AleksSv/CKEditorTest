@@ -4,13 +4,13 @@
         <title>Post HTML Page</title>
         <meta charset="utf-8">
         <link rel="stylesheet" href="styling.css">
-
-        <!-- Make sure the path to CKEditor is correct. -->
         <script src="ckeditor/ckeditor.js"> </script>
+
     </head>
     <body>
         <form>
         	<h1>CKEditor Post Testing</h1>
+        	
         	<div id="editor">
         	</div>
 			
@@ -19,17 +19,13 @@
         	<h1>Result Post</h1>
         	<div id="editorPost">
         	</div>
-        	<div id="editorPostJSON">
-        	</div>
 
             <script>
             var editor, html = '';
         	var config = {};
 
-        	config.allowedContent = 
-        	{
+        	config.allowedContent = {
 			    $1: {
-			        // Use the ability to specify elements as an object.
 			        elements: CKEDITOR.dtd,
 			        attributes: true,
 			        styles: true,
@@ -38,10 +34,11 @@
 			};
 
 			config.disallowedContent = 'script; *[on*]';
+
         	function postHTML()
         	{
         		if(!editor)
-        			{return;}
+        		{return;}
 
         		//Get Editor Contents
         		document.getElementById('editorPost').innerHTML = html = editor.getData();
